@@ -24,7 +24,11 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'ko',
-    locales: ['ko'],
+    locales: ['ko', 'en'],
+    localeConfigs: {
+      ko: { label: '한국어' },
+      en: { label: 'English' },
+    },
   },
 
   presets: [
@@ -33,10 +37,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-
-          // ✅ "Edit this page" 링크는 네 repo로.
-          // (원치 않으면 아래 editUrl 줄 자체를 삭제)
-          editUrl: 'https://github.com/io-ceak-readium/readium-docs-public/tree/main/',
         },
 
         // ✅ 블로그 안 쓸 거면 false로 꺼버리는 게 깔끔함
@@ -65,13 +65,10 @@ const config: Config = {
       },
       items: [
         {to: '/', label: 'Home', position: 'left'},
-        {to: '/docs/intro', label: 'User Manual', position: 'left'},
-        {to: '/docs/privacy', label: 'Privacy', position: 'left'},
-        {
-          href: 'https://github.com/io-ceak-readium/readium',
-          label: 'App Repo',
-          position: 'right',
-        },
+        // ✅ locale 자동 반영 (추천)
+        {type: 'doc', docId: 'intro', label: 'User Manual', position: 'left'},
+        {type: 'doc', docId: 'privacy', label: 'Privacy', position: 'left'},
+        {type: 'localeDropdown', position: 'right'},
       ],
     },
 
@@ -81,15 +78,8 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            {label: 'User Manual', to: '/docs/intro'},
-            {label: 'Privacy Policy', to: '/docs/privacy'},
-          ],
-        },
-        {
-          title: 'Links',
-          items: [
-            {label: 'GitHub Org', href: 'https://github.com/io-ceak-readium'},
-            {label: 'App Repo', href: 'https://github.com/io-ceak-readium/readium'},
+            {label: 'User Manual', to: 'docs/intro'},
+            {label: 'Privacy Policy', to: 'docs/privacy'},
           ],
         },
         {

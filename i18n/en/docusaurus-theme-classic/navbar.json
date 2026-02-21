@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "Readium",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Readium Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Home": {
+    "message": "Home",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.User Manual": {
+    "message": "User Manual",
+    "description": "Navbar item with label User Manual"
+  },
+  "item.label.Privacy": {
+    "message": "Privacy",
+    "description": "Navbar item with label Privacy"
+  },
+  "item.label.App Repo": {
+    "message": "App Repo",
+    "description": "Navbar item with label App Repo"
+  }
+}

@@ -2,42 +2,46 @@ import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Translate, {translate} from '@docusaurus/Translate';
 
 export default function Home() {
   const manualUrl = useBaseUrl('/docs/intro');
-  const privacyUrl = useBaseUrl('/docs/privacy'); // (아래 설명 참고: Privacy 페이지를 docs로 만들 경우)
+  const privacyUrl = useBaseUrl('/docs/privacy');
   const logoUrl = useBaseUrl('img/logo-mark.svg');
 
   return (
-    <Layout title="Readium" description="당신의 독서를 시간으로 남기는 기록 앱">
+    <Layout
+      title="Readium"
+      description={translate({
+        id: 'homepage.meta.description',
+        message: 'A session-based reading log app that saves your reading as time.',
+      })}
+    >
       <main>
         {/* HERO */}
-        <section style={{ padding: '56px 0 28px' }}>
+        <section style={{padding: '56px 0 24px'}}>
           <div className="container">
-            <div style={{ display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
+            <div style={{display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap'}}>
               <img src={logoUrl} alt="Readium" width={44} height={44} />
-              <h1 style={{ fontSize: 44, margin: 0 }}>Readium</h1>
+              <h1 style={{fontSize: 44, margin: 0}}>Readium</h1>
             </div>
 
-            <p style={{ fontSize: 18, opacity: 0.92, maxWidth: 760, marginTop: 12 }}>
-              당신의 독서를 <b>시간으로 남기는</b> 세션 중심 리딩 로그 앱.
-              읽기 기록, 세션, 노트를 한 흐름으로 축적하고 타임라인으로 다시 꺼내봅니다.
+            <p style={{fontSize: 18, opacity: 0.92, maxWidth: 820, marginTop: 12}}>
+              <Translate id="homepage.hero.lead">
+                Readium is a session-based reading log app that helps you save your reading as time. Track
+                start/end sessions, completion, and notes—then revisit everything in a timeline.
+              </Translate>
             </p>
 
-            <div style={{ display: 'flex', gap: 12, marginTop: 18, flexWrap: 'wrap' }}>
+            <div style={{display: 'flex', gap: 12, marginTop: 18, flexWrap: 'wrap'}}>
               <Link className="button button--primary button--lg" to={manualUrl}>
-                User Manual
+                <Translate id="homepage.cta.manual">User Manual</Translate>
               </Link>
-              <Link className="button button--secondary button--lg" to="https://github.com/io-ceak-readium/readium">
-                GitHub
+              <Link className="button button--secondary button--lg" to={privacyUrl}>
+                <Translate id="homepage.cta.privacy">Privacy</Translate>
               </Link>
-              {/* Privacy 문서를 docs로 만들면 활성화 */}
-              {/* <Link className="button button--secondary button--lg" to={privacyUrl}>
-                Privacy Policy
-              </Link> */}
             </div>
 
-            {/* FEATURES */}
             <div
               style={{
                 marginTop: 32,
@@ -47,29 +51,48 @@ export default function Home() {
               }}
             >
               <Feature
-                title="⏱ 세션 로그"
-                desc="읽기 시작/종료를 기록하고, 세션별 독서 흐름을 남깁니다."
+                title={translate({id: 'homepage.feature.session.title', message: '⏱ Sessions'})}
+                desc={translate({
+                  id: 'homepage.feature.session.desc',
+                  message: 'Log start and end times. Reading is saved as time.',
+                })}
               />
               <Feature
-                title="🗂 타임라인"
-                desc="세션/완독/노트를 이벤트로 축적해, 독서 흐름을 한눈에 봅니다."
+                title={translate({id: 'homepage.feature.timeline.title', message: '🗂 Timeline'})}
+                desc={translate({
+                  id: 'homepage.feature.timeline.desc',
+                  message: 'Sessions, completion, and notes are organized in chronological order.',
+                })}
               />
               <Feature
-                title="📝 노트"
-                desc="책 노트/세션 노트를 분리해 기록하고, 필요한 텍스트를 복사할 수 있습니다."
+                title={translate({id: 'homepage.feature.notes.title', message: '📝 Notes'})}
+                desc={translate({
+                  id: 'homepage.feature.notes.desc',
+                  message: 'Keep book notes and session notes separate—write only what you need.',
+                })}
               />
               <Feature
-                title="💾 백업/복구"
-                desc="로컬 DB를 export/import로 옮겨 기기 변경에도 유지합니다."
+                title={translate({id: 'homepage.feature.local.title', message: '💾 Local-first'})}
+                desc={translate({
+                  id: 'homepage.feature.local.desc',
+                  message: 'Your reading data is stored on-device. Move it with backup/restore.',
+                })}
               />
             </div>
           </div>
         </section>
 
         {/* SCREENSHOTS */}
-        <section style={{ padding: '28px 0 56px' }}>
+        <section style={{padding: '24px 0 56px'}}>
           <div className="container">
-            <h2 style={{ marginBottom: 10 }}>Screenshots</h2>
+            <h2 style={{marginBottom: 10}}>
+              <Translate id="homepage.screenshots.title">Screenshots</Translate>
+            </h2>
+            <p style={{opacity: 0.86, maxWidth: 900, marginTop: 0}}>
+              <Translate id="homepage.screenshots.subtitle">
+                Designed to keep you focused on logging—without complicated setup.
+              </Translate>
+            </p>
 
             <div
               style={{
@@ -79,41 +102,61 @@ export default function Home() {
                 marginTop: 16,
               }}
             >
-              <Shot src="img/001-library.jpg" label="Library" />
-              <Shot src="img/002-nowReading.jpg" label="Now Reading" />
-              <Shot src="img/003-bookDetail.jpg" label="Book Detail" />
-              <Shot src="img/004-notes.jpg" label="Notes" />
-              <Shot src="img/005-timeline.jpg" label="Timeline" />
+              <Shot src="img/001-library.jpg" label={translate({id: 'homepage.shot.library', message: 'Library'})} />
+              <Shot
+                src="img/002-nowReading.jpg"
+                label={translate({id: 'homepage.shot.nowReading', message: 'Now Reading'})}
+              />
+              <Shot
+                src="img/003-bookDetail.jpg"
+                label={translate({id: 'homepage.shot.bookDetail', message: 'Book Detail'})}
+              />
+              <Shot src="img/004-notes.jpg" label={translate({id: 'homepage.shot.notes', message: 'Notes'})} />
+              <Shot src="img/005-timeline.jpg" label={translate({id: 'homepage.shot.timeline', message: 'Timeline'})} />
             </div>
           </div>
         </section>
 
-        {/* PRIVACY (요약) */}
-        <section style={{ padding: '0 0 72px' }}>
+        {/* DATA & PRIVACY SUMMARY */}
+        <section style={{padding: '0 0 72px'}}>
           <div className="container">
-            <h2 style={{ marginBottom: 10 }}>Data & Privacy</h2>
+            <h2 style={{marginBottom: 10}}>
+              <Translate id="homepage.privacy.title">Data & Privacy</Translate>
+            </h2>
 
             <div
               style={{
                 border: '1px solid rgba(255,255,255,0.12)',
                 borderRadius: 14,
                 padding: 16,
-                maxWidth: 920,
+                maxWidth: 980,
               }}
             >
-              <ul style={{ margin: 0, paddingLeft: 18, opacity: 0.92 }}>
+              <p style={{marginTop: 0, opacity: 0.92}}>
+                <Translate id="homepage.privacy.lead">
+                  By default, Readium stores your reading logs, sessions, notes, and timeline data locally on your device.
+                </Translate>
+              </p>
+
+              <ul style={{margin: 0, paddingLeft: 18, opacity: 0.9}}>
                 <li>
-                  읽기 기록/세션/노트/타임라인 데이터는 <b>기기 로컬에 저장</b>되며, Readium 서버로 전송되지 않습니다.
+                  <Translate id="homepage.privacy.bullet1">
+                    Your reading data is not uploaded to a Readium server.
+                  </Translate>
                 </li>
                 <li>
-                  앱은 <b>Firebase 익명 인증</b>과 <b>Google AdMob</b>을 사용하며, 해당 서비스는 기기/네트워크/진단 정보 등을 처리할 수 있습니다.
+                  <Translate id="homepage.privacy.bullet2">
+                    The app uses Firebase anonymous authentication and Google AdMob.
+                  </Translate>
                 </li>
               </ul>
 
-              <div style={{ marginTop: 12, display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-                <Link className="button button--secondary" to={privacyUrl}>Privacy Policy</Link>
+              <div style={{marginTop: 12, display: 'flex', gap: 10, flexWrap: 'wrap'}}>
+                <Link className="button button--secondary" to={privacyUrl}>
+                  <Translate id="homepage.privacy.cta">Read Privacy Policy</Translate>
+                </Link>
                 <Link className="button button--secondary" to={manualUrl}>
-                  Read the Manual
+                  <Translate id="homepage.manual.cta">Read the Manual</Translate>
                 </Link>
               </div>
             </div>
@@ -124,21 +167,21 @@ export default function Home() {
   );
 }
 
-function Feature({ title, desc }: { title: string; desc: string }) {
+function Feature({title, desc}: {title: string; desc: string}) {
   return (
-    <div style={{ border: '1px solid rgba(255,255,255,0.12)', borderRadius: 14, padding: 16 }}>
-      <h3 style={{ margin: 0, marginBottom: 8 }}>{title}</h3>
-      <p style={{ margin: 0, opacity: 0.9 }}>{desc}</p>
+    <div style={{border: '1px solid rgba(255,255,255,0.12)', borderRadius: 14, padding: 16}}>
+      <h3 style={{margin: 0, marginBottom: 8}}>{title}</h3>
+      <p style={{margin: 0, opacity: 0.9}}>{desc}</p>
     </div>
   );
 }
 
-function Shot({ src, label }: { src: string; label: string }) {
+function Shot({src, label}: {src: string; label: string}) {
   const imgUrl = useBaseUrl(src);
 
   return (
-    <div style={{ border: '1px solid rgba(255,255,255,0.12)', borderRadius: 14, overflow: 'hidden' }}>
-      <div style={{ padding: 10, fontSize: 14, opacity: 0.85 }}>{label}</div>
+    <div style={{border: '1px solid rgba(255,255,255,0.12)', borderRadius: 14, overflow: 'hidden'}}>
+      <div style={{padding: 10, fontSize: 14, opacity: 0.85}}>{label}</div>
       <div
         style={{
           background: 'rgba(255,255,255,0.04)',
@@ -148,7 +191,7 @@ function Shot({ src, label }: { src: string; label: string }) {
           justifyContent: 'center',
         }}
       >
-        <img src={imgUrl} alt={label} style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }} />
+        <img src={imgUrl} alt={label} style={{maxWidth: '90%', maxHeight: '90%', objectFit: 'contain'}} />
       </div>
     </div>
   );
