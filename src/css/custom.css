@@ -55,3 +55,13 @@ h1, h2, h3, h4, h5, h6 {
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Doc screenshots (phone) */
+.docShot {
+  max-width: 360px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 12px auto;
+  border-radius: 12px;
+}

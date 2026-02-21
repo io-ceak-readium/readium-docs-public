@@ -11,6 +11,8 @@ Readium은 단순히 책을 기록하는 앱이 아닙니다.
 읽은 순간을 세션으로 남기고,  
 그 흐름을 타임라인으로 다시 꺼내볼 수 있도록 설계되었습니다.
 
+![Library 화면](/img/screenshots/intro_library.jpg)
+
 ---
 
 ## Readium의 특징
@@ -22,6 +24,8 @@ Readium은 단순히 책을 기록하는 앱이 아닙니다.
 
 “얼마나 읽었는지”가 아니라  
 “언제, 어떻게 읽었는지”를 남깁니다.
+
+![Book Detail - 세션 버튼](/img/screenshots/intro_book_detail.jpg)
 
 ---
 
@@ -35,6 +39,8 @@ Readium은 단순히 책을 기록하는 앱이 아닙니다.
 모든 활동이 시간 순서대로 정리됩니다.  
 독서의 흐름을 한눈에 볼 수 있습니다.
 
+![Timeline 화면](/img/screenshots/intro_timeline.jpg)
+
 ---
 
 ### 📝 간결한 노트
@@ -44,6 +50,8 @@ Readium은 단순히 책을 기록하는 앱이 아닙니다.
 
 필요한 만큼만 기록하세요.  
 과한 기능은 넣지 않았습니다.
+
+![노트 작성 화면](/img/screenshots/intro_note.jpg)
 
 ---
 

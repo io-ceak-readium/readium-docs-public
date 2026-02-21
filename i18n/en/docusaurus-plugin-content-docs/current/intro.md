@@ -10,6 +10,8 @@ A reading log app that helps you **save your reading as time**.
 Readium is not just a “book list.”  
 It’s designed to capture your reading as **sessions**, and bring them back as a **timeline** you can revisit.
 
+![Library Tab](/img/screenshots/intro_library.jpg)
+
 ---
 
 ## What Readium is good at
@@ -20,6 +22,8 @@ Start reading, stop reading — and your time is saved.
 
 Instead of focusing only on “finished or not,”  
 Readium helps you keep the **flow** of your reading.
+
+![Book Detail - session button](/img/screenshots/intro_book_detail.jpg)
 
 ---
 
@@ -32,6 +36,8 @@ Readium helps you keep the **flow** of your reading.
 
 Everything is organized in chronological order, so you can see your reading at a glance.
 
+![Timeline](/img/screenshots/intro_timeline.jpg)
+
 ---
 
 ### 📝 Simple notes
@@ -41,6 +47,8 @@ Everything is organized in chronological order, so you can see your reading at a
 
 Write only what you need.  
 Readium avoids unnecessary complexity.
+
+![note](/img/screenshots/intro_note.jpg)
 
 ---
 
