@@ -9,6 +9,15 @@ export default function Home() {
   const privacyUrl = useBaseUrl('/docs/privacy');
   const logoUrl = useBaseUrl('img/logo-mark.svg');
 
+  const playBadgeUrl = useBaseUrl('img/store/google-play-badge.png');
+  const appStoreBadgeUrl = useBaseUrl('img/store/app-store-badge.svg');
+
+  const ANDROID_LIVE = false; // 🚀 출시하면 true
+  const IOS_LIVE = false;     // 🚀 출시하면 true
+
+  const ANDROID_URL = 'https://play.google.com/store/apps/details?id=your.package';
+  const IOS_URL = 'https://apps.apple.com/app/idXXXXXXXXXX';
+
   return (
     <Layout
       title="Readium"
@@ -42,6 +51,32 @@ export default function Home() {
               </Link>
             </div>
 
+            <div
+              style={{
+                marginTop: 32,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: 0,
+                flexWrap: 'wrap',
+              }}
+            >
+              <StoreBadge
+                imgSrc={playBadgeUrl}
+                alt="Get it on Google Play"
+                url={ANDROID_URL}
+                isLive={ANDROID_LIVE}
+                scale={1.00}
+              />
+              <StoreBadge
+                imgSrc={appStoreBadgeUrl}
+                alt="Download on the App Store"
+                url={IOS_URL}
+                isLive={IOS_LIVE}
+                scale={1.22}
+              />
+            </div>
+            
             <div
               style={{
                 marginTop: 32,
@@ -194,5 +229,76 @@ function Shot({src, label}: {src: string; label: string}) {
         <img src={imgUrl} alt={label} style={{maxWidth: '90%', maxHeight: '90%', objectFit: 'contain'}} />
       </div>
     </div>
+  );
+}
+
+function StoreBadge({
+  imgSrc,
+  alt,
+  url,
+  isLive,
+  scale = 1,
+}: {
+  imgSrc: string;
+  alt: string;
+  url: string;
+  isLive: boolean;
+  scale?: number;
+}) {
+  const content = (
+    <div
+      style={{
+        position: 'relative',
+        width: 200,
+        height: 72,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: isLive ? 'pointer' : 'default',
+      }}
+    >
+      <img
+        src={imgSrc}
+        alt={alt}
+        style={{
+          maxWidth: '100%',
+          maxHeight: '100%',
+          objectFit: 'contain',
+          filter: isLive ? 'none' : 'grayscale(100%)',
+          opacity: isLive ? 1 : 0.9,
+          transform: `scale(${scale})`,
+        }}
+      />
+
+      {!isLive && (
+        <span
+          style={{
+            position: 'absolute',
+            top: 1,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: '#ff4d4f',
+            color: '#fff',
+            fontSize: 10,
+            padding: '2px 8px',
+            borderRadius: 999,
+            fontWeight: 700,
+            opacity: 0.92,
+            boxShadow: '0 1px 4px rgba(0,0,0,0.35)',
+          }}
+        >
+          Coming Soon
+        </span>
+      )}
+    </div>
+  );
+
+  // 🚀 출시되면 자동으로 링크 활성
+  return isLive ? (
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      {content}
+    </a>
+  ) : (
+    content
   );
 }
