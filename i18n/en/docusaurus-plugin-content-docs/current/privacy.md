@@ -76,4 +76,4 @@ If this policy changes, this page will be updated.
 
 For privacy-related questions:
 
-- Email: io.ceak.readium@gmail.com
+- Email: ceak@daum.net

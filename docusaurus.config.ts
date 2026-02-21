@@ -87,7 +87,7 @@ const config: Config = {
           items: [
             {
               label: 'Email',
-              href: 'mailto:io.ceak.readium@gmail.com',
+              href: 'mailto:ceak@daum.net',
             },
           ],
         },

@@ -78,4 +78,4 @@ Readium(이하 “앱”)은 사용자의 개인정보를 존중하며, 본 문�
 
 개인정보 관련 문의는 아래로 연락해 주세요.
 
-- Email: io.ceak.readium@gmail.com
+- Email: ceak@daum.net
