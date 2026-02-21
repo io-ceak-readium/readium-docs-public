@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Readium favicon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7fc1ff"></stop>
+      <stop offset="100%" stop-color="#2f6cff"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- rounded background -->
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#bg)"></rect>
+
+  <!-- clock circle -->
+  <circle cx="32" cy="26" r="14" fill="#ffffff"></circle>
+  <circle cx="32" cy="26" r="11" fill="#1f57d6"></circle>
+
+  <!-- clock hands -->
+  <line x1="32" y1="26" x2="25" y2="21" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"></line>
+  <line x1="32" y1="26" x2="39" y2="20" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"></line>
+  <circle cx="32" cy="26" r="2" fill="#ffffff"></circle>
+
+  <!-- simplified book -->
+  <path d="M18 36c6-3 14-3 14 0v10c-6-3-14-3-14 0z" fill="#ffffff"></path>
+  <path d="M46 36c-6-3-14-3-14 0v10c6-3 14-3 14 0z" fill="#ffffff"></path>
+  <line x1="32" y1="36" x2="32" y2="46" stroke="#c7dcff" stroke-width="1.5"></line>
+</svg>

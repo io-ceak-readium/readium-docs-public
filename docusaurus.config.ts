@@ -6,33 +6,25 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Readium',
-  tagline: '읽기 기록 · 세션 · 노트를 타임라인으로 정리',
-  favicon: 'img/favicon.ico',
+  tagline: '당신의 독서를 시간으로 남기는 세션 중심 리딩 로그',
+  favicon: 'img/favicon.svg',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
   url: 'https://io-ceak-readium.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/readium-docs-public/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'io-ceak-readium', // Usually your GitHub org/user name.
-  projectName: 'readium-docs-public', // Usually your repo name.
+  organizationName: 'io-ceak-readium',
+  projectName: 'readium-docs-public',
 
   onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ko',
+    locales: ['ko'],
   },
 
   presets: [
@@ -41,26 +33,15 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+
+          // ✅ "Edit this page" 링크는 네 repo로.
+          // (원치 않으면 아래 editUrl 줄 자체를 삭제)
+          editUrl: 'https://github.com/io-ceak-readium/readium-docs-public/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+
+        // ✅ 블로그 안 쓸 거면 false로 꺼버리는 게 깔끔함
+        blog: false,
+
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -69,20 +50,23 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    // social card는 나중에 교체 가능. 없으면 이 줄 삭제해도 됨.
+    // image: 'img/docusaurus-social-card.jpg',
+
     colorMode: {
       respectPrefersColorScheme: true,
     },
+
     navbar: {
       title: 'Readium',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'Readium Logo',
+        src: 'img/logo-mark.svg',
       },
       items: [
-        { to: '/docs/intro', label: 'User Manual', position: 'left' },
-        { to: '/', label: 'Home', position: 'left' },
+        {to: '/', label: 'Home', position: 'left'},
+        {to: '/docs/intro', label: 'User Manual', position: 'left'},
+        {to: '/docs/privacy', label: 'Privacy', position: 'left'},
         {
           href: 'https://github.com/io-ceak-readium/readium',
           label: 'App Repo',
@@ -90,22 +74,37 @@ const config: Config = {
         },
       ],
     },
+
     footer: {
       style: 'dark',
       links: [
         {
           title: 'Docs',
-          items: [{ label: 'User Manual', to: '/docs/intro' }],
+          items: [
+            {label: 'User Manual', to: '/docs/intro'},
+            {label: 'Privacy Policy', to: '/docs/privacy'},
+          ],
         },
         {
           title: 'Links',
           items: [
-            { label: 'GitHub', href: 'https://github.com/io-ceak-readium' },
+            {label: 'GitHub Org', href: 'https://github.com/io-ceak-readium'},
+            {label: 'App Repo', href: 'https://github.com/io-ceak-readium/readium'},
+          ],
+        },
+        {
+          title: 'Contact',
+          items: [
+            {
+              label: 'Email',
+              href: 'mailto:io.ceak.readium@gmail.com',
+            },
           ],
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Readium`,
     },
+
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
