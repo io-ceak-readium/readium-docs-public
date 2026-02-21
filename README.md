@@ -1,41 +1,104 @@
-# Website
+# 📘 Readium Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Official documentation site for **Readium** —  
+a session-based reading log app that saves your reading as time.
 
-## Installation
+🌐 Live Site: https://your-username.github.io/readium-docs  
+📱 App Status: Android / iOS – Coming Soon  
+
+---
+
+## 🧭 About Readium
+
+Readium is designed to:
+
+- ⏱ Log reading sessions (start / end)
+- 🗂 Organize reading activity in a timeline
+- 📝 Keep book notes and session notes separately
+- 💾 Store data locally on device
+
+This repository contains the public documentation website built with **Docusaurus**.
+
+---
+
+## 🛠 Tech Stack
+
+- Docusaurus
+- React
+- GitHub Pages
+- GitHub Actions (Deployment)
+
+---
+
+## 🚀 Local Development
+
+Install dependencies:
 
 ```bash
 yarn
-```
+````
 
-## Local Development
+Start development server:
 
 ```bash
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+The site will be available at:
 
-## Build
+```
+http://localhost:3000
+```
+
+Hot reload is enabled.
+
+---
+
+## 🏗 Build
+
+Generate static files:
 
 ```bash
 yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Build output directory:
 
-## Deployment
+```
+/build
+```
 
-Using SSH:
+---
+
+## 🚢 Deployment
+
+Deploy to GitHub Pages:
+
+```bash
+yarn deploy
+```
+
+If SSH is required:
 
 ```bash
 USE_SSH=true yarn deploy
 ```
 
-Not using SSH:
+---
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
+## 📂 Project Structure
+
+```
+docs/          → Documentation markdown files  
+src/           → Custom React pages & components  
+static/        → Images (screenshots, badges)  
+docusaurus.config.ts  
+sidebars.ts  
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+---
+
+## 📄 License
+
+Copyright © 2026 Readium.
+All rights reserved.
