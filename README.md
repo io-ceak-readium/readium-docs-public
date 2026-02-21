@@ -3,7 +3,7 @@
 Official documentation site for **Readium** —  
 a session-based reading log app that saves your reading as time.
 
-🌐 Live Site: https://your-username.github.io/readium-docs  
+🌐 Live Site: https://io-ceak-readium.github.io/readium-docs-public
 📱 App Status: Android / iOS – Coming Soon  
 
 ---
