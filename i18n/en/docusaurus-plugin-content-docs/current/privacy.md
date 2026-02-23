@@ -21,12 +21,16 @@ Readium does not upload your reading logs, sessions, notes, or timeline content 
 However, the app may use third-party services listed below. These services may process certain information to provide their functionality.
 
 ### (1) Firebase Authentication (Anonymous Sign-in)
-- Purpose: anonymous user identification for app operation/protection
-- Possible data processed (examples): anonymous user identifier, device/app info, operational logs
+- Purpose: anonymous user identification for app operation and protection
+- Possible data processed (examples): anonymous user identifier, device/app information, operational logs
+- This data is used for app functionality and account management.
 
 ### (2) Google AdMob
-- Purpose: serving ads and measuring ad performance/quality
-- Possible data processed (examples): advertising identifiers, IP address, device info, ad interaction and diagnostics  
+- Purpose: serving ads and measuring ad performance and quality
+- Possible data processed (examples): Advertising ID, IP address, device information, app interaction data, ad interaction and diagnostic information
+- This information may be processed for ad delivery, ad measurement, and personalized advertising.
+- Users may limit ad personalization or reset advertising identifiers through their device settings.
+- Readium does **not** use Google Analytics for Firebase.
   (Exact details depend on Google’s policies.)
 
 ---
@@ -41,7 +45,7 @@ The following data is stored in the app’s local database:
 - book notes / session notes
 - timeline entries
 
-This data stays on your device unless you export it yourself.
+This data remains on your device unless you explicitly export or share it.
 
 ---
 
@@ -49,20 +53,24 @@ This data stays on your device unless you export it yourself.
 
 Readium does not sell or share your local reading data.
 
-Third-party services (Firebase, AdMob) may process data under their own terms and privacy policies.
+Third-party services (Firebase, AdMob) may process certain data under their own terms and privacy policies.
 
 ---
 
 ## 4. Retention and deletion
 
-- Local data can be removed by deleting the app or by using data deletion features (if available).
-- Retention policies for third-party services are governed by the providers.
+- Local data can be removed by deleting the app or by using in-app data deletion features (if available).
+- Retention and deletion of data processed by third-party services are governed by those providers.
 
 ---
 
 ## 5. Your choices
 
-Depending on your OS/device settings, you may be able to limit ad personalization or reset advertising identifiers.
+Depending on your OS/device settings, you may:
+
+- limit ad personalization
+- reset your Advertising ID
+- manage certain privacy settings related to ads
 
 ---
 
