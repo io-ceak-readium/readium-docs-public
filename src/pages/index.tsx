@@ -4,16 +4,23 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Translate, {translate} from '@docusaurus/Translate';
 
+import styles from './index.module.css';
+
+type ShotProps = {
+  src: string;
+  label: string;
+  emphasis?: 'hero' | 'default';
+};
+
 export default function Home() {
   const manualUrl = useBaseUrl('/docs/intro');
   const privacyUrl = useBaseUrl('/docs/privacy');
   const logoUrl = useBaseUrl('img/logo-mark.svg');
-
   const playBadgeUrl = useBaseUrl('img/store/google-play-badge.png');
   const appStoreBadgeUrl = useBaseUrl('img/store/app-store-badge.svg');
 
-  const ANDROID_LIVE = false; // 🚀 출시하면 true
-  const IOS_LIVE = false;     // 🚀 출시하면 true
+  const ANDROID_LIVE = false;
+  const IOS_LIVE = false;
 
   const ANDROID_URL = 'https://play.google.com/store/apps/details?id=your.package';
   const IOS_URL = 'https://apps.apple.com/app/idXXXXXXXXXX';
@@ -23,177 +30,192 @@ export default function Home() {
       title="Readium"
       description={translate({
         id: 'homepage.meta.description',
-        message: 'A session-based reading log app that saves your reading as time.',
+        message: '독서를 완료 여부가 아니라 실제 읽은 시간과 흐름으로 남기는 세션 중심 리딩 로그 앱.',
       })}
     >
-      <main>
-        {/* HERO */}
-        <section style={{padding: '56px 0 24px'}}>
-          <div className="container">
-            <div style={{display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap'}}>
-              <img src={logoUrl} alt="Readium" width={44} height={44} />
-              <h1 style={{fontSize: 44, margin: 0}}>Readium</h1>
+      <main className={styles.page}>
+        <section className={styles.heroSection}>
+          <div className={`container ${styles.heroGrid}`}>
+            <div className={styles.heroCopy}>
+              <div className={styles.brandRow}>
+                <div className={styles.logoWrap}>
+                  <img src={logoUrl} alt="Readium" width={40} height={40} />
+                </div>
+                <span className={styles.brandLabel}>Readium</span>
+              </div>
+
+              <h1 className={styles.heroTitle}>
+                <Translate id="homepage.hero.title">
+                  완독한 책 목록이 아니라 읽은 시간을 남기세요.
+                </Translate>
+              </h1>
+
+              <p className={styles.heroLead}>
+                <Translate id="homepage.hero.lead">
+                  Readium은 읽기 시작과 종료, 진행률, 노트, 타임라인 기록을 한 흐름으로 관리할 수 있게 만든
+                  세션 중심 독서 로그 앱입니다.
+                </Translate>
+              </p>
+
+              <div className={styles.heroActions}>
+                <Link className="button button--primary button--lg" to={manualUrl}>
+                  <Translate id="homepage.cta.manual">사용자 매뉴얼</Translate>
+                </Link>
+                <Link className="button button--secondary button--lg" to={privacyUrl}>
+                  <Translate id="homepage.cta.privacy">개인정보처리방침</Translate>
+                </Link>
+              </div>
+
+              <div className={styles.heroStats}>
+                <Metric
+                  label={translate({id: 'homepage.metric.focus', message: '핵심 기록 단위'})}
+                  value={translate({id: 'homepage.metric.focus.value', message: '독서 세션'})}
+                />
+                <Metric
+                  label={translate({id: 'homepage.metric.storage', message: '저장 방식'})}
+                  value={translate({id: 'homepage.metric.storage.value', message: '로컬 우선'})}
+                />
+                <Metric
+                  label={translate({id: 'homepage.metric.views', message: '주요 화면'})}
+                  value={translate({id: 'homepage.metric.views.value', message: 'Library, Now Reading, Timeline'})}
+                />
+              </div>
+
+              <div className={styles.storeRow}>
+                <StoreBadge
+                  imgSrc={playBadgeUrl}
+                  alt="Get it on Google Play"
+                  url={ANDROID_URL}
+                  isLive={ANDROID_LIVE}
+                  scale={1}
+                />
+                <StoreBadge
+                  imgSrc={appStoreBadgeUrl}
+                  alt="Download on the App Store"
+                  url={IOS_URL}
+                  isLive={IOS_LIVE}
+                  scale={1.18}
+                />
+              </div>
             </div>
 
-            <p style={{fontSize: 18, opacity: 0.92, maxWidth: 820, marginTop: 12}}>
-              <Translate id="homepage.hero.lead">
-                Readium is a session-based reading log app that helps you save your reading as time. Track
-                start/end sessions, completion, and notes—then revisit everything in a timeline.
-              </Translate>
-            </p>
-
-            <div style={{display: 'flex', gap: 12, marginTop: 18, flexWrap: 'wrap'}}>
-              <Link className="button button--primary button--lg" to={manualUrl}>
-                <Translate id="homepage.cta.manual">User Manual</Translate>
-              </Link>
-              <Link className="button button--secondary button--lg" to={privacyUrl}>
-                <Translate id="homepage.cta.privacy">Privacy</Translate>
-              </Link>
-            </div>
-
-            <div
-              style={{
-                marginTop: 32,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: 0,
-                flexWrap: 'wrap',
-              }}
-            >
-              <StoreBadge
-                imgSrc={playBadgeUrl}
-                alt="Get it on Google Play"
-                url={ANDROID_URL}
-                isLive={ANDROID_LIVE}
-                scale={1.00}
+            <div className={styles.heroShots}>
+              <Shot
+                src="img/002-nowReading.jpg"
+                label={translate({id: 'homepage.shot.nowReading', message: 'Now Reading'})}
+                emphasis="hero"
               />
-              <StoreBadge
-                imgSrc={appStoreBadgeUrl}
-                alt="Download on the App Store"
-                url={IOS_URL}
-                isLive={IOS_LIVE}
-                scale={1.22}
-              />
-            </div>
-            
-            <div
-              style={{
-                marginTop: 32,
-                display: 'grid',
-                gap: 12,
-                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              }}
-            >
-              <Feature
-                title={translate({id: 'homepage.feature.session.title', message: '⏱ Sessions'})}
-                desc={translate({
-                  id: 'homepage.feature.session.desc',
-                  message: 'Log start and end times. Reading is saved as time.',
-                })}
-              />
-              <Feature
-                title={translate({id: 'homepage.feature.timeline.title', message: '🗂 Timeline'})}
-                desc={translate({
-                  id: 'homepage.feature.timeline.desc',
-                  message: 'Sessions, completion, and notes are organized in chronological order.',
-                })}
-              />
-              <Feature
-                title={translate({id: 'homepage.feature.notes.title', message: '📝 Notes'})}
-                desc={translate({
-                  id: 'homepage.feature.notes.desc',
-                  message: 'Keep book notes and session notes separate—write only what you need.',
-                })}
-              />
-              <Feature
-                title={translate({id: 'homepage.feature.local.title', message: '💾 Local-first'})}
-                desc={translate({
-                  id: 'homepage.feature.local.desc',
-                  message: 'Your reading data is stored on-device. Move it with backup/restore.',
-                })}
-              />
+              <div className={styles.heroShotStack}>
+                <Shot
+                  src="img/001-library.jpg"
+                  label={translate({id: 'homepage.shot.library', message: 'Library'})}
+                />
+                <Shot
+                  src="img/005-timeline.jpg"
+                  label={translate({id: 'homepage.shot.timeline', message: 'Timeline'})}
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* SCREENSHOTS */}
-        <section style={{padding: '24px 0 56px'}}>
-          <div className="container">
-            <h2 style={{marginBottom: 10}}>
-              <Translate id="homepage.screenshots.title">Screenshots</Translate>
-            </h2>
-            <p style={{opacity: 0.86, maxWidth: 900, marginTop: 0}}>
-              <Translate id="homepage.screenshots.subtitle">
-                Designed to keep you focused on logging—without complicated setup.
-              </Translate>
-            </p>
+        <section className={styles.section}>
+          <div className={`container ${styles.cardGrid}`}>
+            <Feature
+              title={translate({id: 'homepage.feature.session.title', message: '세션 중심 독서 기록'})}
+              desc={translate({
+                id: 'homepage.feature.session.desc',
+                message: '읽기 시작과 종료를 기록해 실제 독서 리듬이 남도록 설계했습니다.',
+              })}
+            />
+            <Feature
+              title={translate({id: 'homepage.feature.now.title', message: '현재 읽는 책 빠른 제어'})}
+              desc={translate({
+                id: 'homepage.feature.now.desc',
+                message: '서재를 다시 뒤지지 않고 Now Reading에서 바로 시작, 종료, 세션 메모를 처리할 수 있습니다.',
+              })}
+            />
+            <Feature
+              title={translate({id: 'homepage.feature.timeline.title', message: '다시 찾아볼 수 있는 타임라인'})}
+              desc={translate({
+                id: 'homepage.feature.timeline.desc',
+                message: '세션 기록, 완독, 노트가 시간순으로 모여 독서 흐름을 다시 살펴볼 수 있습니다.',
+              })}
+            />
+            <Feature
+              title={translate({id: 'homepage.feature.local.title', message: '백업 가능한 로컬 데이터'})}
+              desc={translate({
+                id: 'homepage.feature.local.desc',
+                message: '독서 데이터는 기본적으로 기기에 저장되며 백업과 복원으로 옮길 수 있습니다.',
+              })}
+            />
+          </div>
+        </section>
 
-            <div
-              style={{
-                display: 'grid',
-                gap: 12,
-                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                marginTop: 16,
-              }}
-            >
-              <Shot src="img/001-library.jpg" label={translate({id: 'homepage.shot.library', message: 'Library'})} />
+        <section className={styles.section}>
+          <div className="container">
+            <div className={styles.sectionHeading}>
+              <h2>
+                <Translate id="homepage.screenshots.title">핵심 화면</Translate>
+              </h2>
+              <p>
+                <Translate id="homepage.screenshots.subtitle">
+                  각 화면은 책 관리, 현재 읽는 책 이어보기, 노트 확인, 타임라인 점검처럼 하나의 역할에 집중하도록
+                  구성되어 있습니다.
+                </Translate>
+              </p>
+            </div>
+
+            <div className={styles.shotGrid}>
+              <Shot src="img/001-library.jpg" label={translate({id: 'homepage.shot.library2', message: 'Library'})} />
               <Shot
                 src="img/002-nowReading.jpg"
-                label={translate({id: 'homepage.shot.nowReading', message: 'Now Reading'})}
+                label={translate({id: 'homepage.shot.nowReading2', message: 'Now Reading'})}
               />
               <Shot
                 src="img/003-bookDetail.jpg"
                 label={translate({id: 'homepage.shot.bookDetail', message: 'Book Detail'})}
               />
               <Shot src="img/004-notes.jpg" label={translate({id: 'homepage.shot.notes', message: 'Notes'})} />
-              <Shot src="img/005-timeline.jpg" label={translate({id: 'homepage.shot.timeline', message: 'Timeline'})} />
+              <Shot src="img/005-timeline.jpg" label={translate({id: 'homepage.shot.timeline2', message: 'Timeline'})} />
             </div>
           </div>
         </section>
 
-        {/* DATA & PRIVACY SUMMARY */}
-        <section style={{padding: '0 0 72px'}}>
-          <div className="container">
-            <h2 style={{marginBottom: 10}}>
-              <Translate id="homepage.privacy.title">Data & Privacy</Translate>
-            </h2>
-
-            <div
-              style={{
-                border: '1px solid rgba(255,255,255,0.12)',
-                borderRadius: 14,
-                padding: 16,
-                maxWidth: 980,
-              }}
-            >
-              <p style={{marginTop: 0, opacity: 0.92}}>
+        <section className={styles.section}>
+          <div className={`container ${styles.privacyPanel}`}>
+            <div className={styles.sectionHeading}>
+              <h2>
+                <Translate id="homepage.privacy.title">데이터와 개인정보</Translate>
+              </h2>
+              <p>
                 <Translate id="homepage.privacy.lead">
-                  By default, Readium stores your reading logs, sessions, notes, and timeline data locally on your device.
+                  Readium은 기본적으로 독서 기록, 노트, 타임라인 데이터를 기기에 저장하며 Readium 서버로 업로드하지
+                  않습니다.
                 </Translate>
               </p>
+            </div>
 
-              <ul style={{margin: 0, paddingLeft: 18, opacity: 0.9}}>
-                <li>
-                  <Translate id="homepage.privacy.bullet1">
-                    Your reading data is not uploaded to a Readium server.
-                  </Translate>
-                </li>
-                <li>
-                  <Translate id="homepage.privacy.bullet2">
-                    The app uses Firebase anonymous authentication and Google AdMob.
-                  </Translate>
-                </li>
-              </ul>
+            <ul className={styles.privacyList}>
+              <li>
+                <Translate id="homepage.privacy.bullet1">
+                  독서 데이터는 Readium 서버로 업로드되지 않습니다.
+                </Translate>
+              </li>
+              <li>
+                <Translate id="homepage.privacy.bullet2">
+                  앱은 Firebase 익명 인증과 Google AdMob을 사용합니다.
+                </Translate>
+              </li>
+            </ul>
 
-              <div style={{marginTop: 12, display: 'flex', gap: 10, flexWrap: 'wrap'}}>
-                <Link className="button button--secondary" to={privacyUrl}>
-                  <Translate id="homepage.privacy.cta">Read Privacy Policy</Translate>
-                </Link>
-                <Link className="button button--secondary" to={manualUrl}>
-                  <Translate id="homepage.manual.cta">Read the Manual</Translate>
-                </Link>
-              </div>
+            <div className={styles.heroActions}>
+              <Link className="button button--secondary" to={privacyUrl}>
+                <Translate id="homepage.privacy.cta">개인정보처리방침 보기</Translate>
+              </Link>
+              <Link className="button button--secondary" to={manualUrl}>
+                <Translate id="homepage.manual.cta">매뉴얼 보기</Translate>
+              </Link>
             </div>
           </div>
         </section>
@@ -202,33 +224,32 @@ export default function Home() {
   );
 }
 
-function Feature({title, desc}: {title: string; desc: string}) {
+function Metric({label, value}: {label: string; value: string}) {
   return (
-    <div style={{border: '1px solid rgba(255,255,255,0.12)', borderRadius: 14, padding: 16}}>
-      <h3 style={{margin: 0, marginBottom: 8}}>{title}</h3>
-      <p style={{margin: 0, opacity: 0.9}}>{desc}</p>
+    <div className={styles.metricCard}>
+      <span className={styles.metricLabel}>{label}</span>
+      <strong className={styles.metricValue}>{value}</strong>
     </div>
   );
 }
 
-function Shot({src, label}: {src: string; label: string}) {
+function Feature({title, desc}: {title: string; desc: string}) {
+  return (
+    <article className={styles.featureCard}>
+      <h3>{title}</h3>
+      <p>{desc}</p>
+    </article>
+  );
+}
+
+function Shot({src, label, emphasis = 'default'}: ShotProps) {
   const imgUrl = useBaseUrl(src);
 
   return (
-    <div style={{border: '1px solid rgba(255,255,255,0.12)', borderRadius: 14, overflow: 'hidden'}}>
-      <div style={{padding: 10, fontSize: 14, opacity: 0.85}}>{label}</div>
-      <div
-        style={{
-          background: 'rgba(255,255,255,0.04)',
-          height: 420,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <img src={imgUrl} alt={label} style={{maxWidth: '90%', maxHeight: '90%', objectFit: 'contain'}} />
-      </div>
-    </div>
+    <figure className={emphasis === 'hero' ? styles.shotHeroCard : styles.shotCard}>
+      <figcaption>{label}</figcaption>
+      <img src={imgUrl} alt={label} />
+    </figure>
   );
 }
 
@@ -246,59 +267,23 @@ function StoreBadge({
   scale?: number;
 }) {
   const content = (
-    <div
-      style={{
-        position: 'relative',
-        width: 200,
-        height: 72,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        cursor: isLive ? 'pointer' : 'default',
-      }}
-    >
-      <img
-        src={imgSrc}
-        alt={alt}
-        style={{
-          maxWidth: '100%',
-          maxHeight: '100%',
-          objectFit: 'contain',
-          filter: isLive ? 'none' : 'grayscale(100%)',
-          opacity: isLive ? 1 : 0.9,
-          transform: `scale(${scale})`,
-        }}
-      />
-
+    <div className={styles.storeBadge} style={{transform: `scale(${scale})`}}>
+      <img src={imgSrc} alt={alt} />
       {!isLive && (
-        <span
-          style={{
-            position: 'absolute',
-            top: 1,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            background: '#ff4d4f',
-            color: '#fff',
-            fontSize: 10,
-            padding: '2px 8px',
-            borderRadius: 999,
-            fontWeight: 700,
-            opacity: 0.92,
-            boxShadow: '0 1px 4px rgba(0,0,0,0.35)',
-          }}
-        >
-          Coming Soon
+        <span className={styles.storeBadgeSoon}>
+          <Translate id="homepage.store.comingSoon">출시 예정</Translate>
         </span>
       )}
     </div>
   );
 
-  // 🚀 출시되면 자동으로 링크 활성
-  return isLive ? (
-    <a href={url} target="_blank" rel="noopener noreferrer">
+  if (!isLive) {
+    return <div className={styles.storeBadgeWrap}>{content}</div>;
+  }
+
+  return (
+    <Link className={styles.storeBadgeWrap} to={url}>
       {content}
-    </a>
-  ) : (
-    content
+    </Link>
   );
 }

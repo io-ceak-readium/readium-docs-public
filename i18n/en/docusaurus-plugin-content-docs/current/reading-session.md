@@ -5,47 +5,43 @@ title: Reading Session
 
 # Reading Session
 
-A session is your **actual reading time**.
+A session is the basic unit Readium uses to record actual reading time.
 
-It’s the core feature of Readium.
+Even when you finish a book over many separate sittings, each session keeps part of that reading history.
 
----
+## Starting a session
 
-## What is a session?
+You can start a session from two places:
 
-Examples:
+- the book detail page
+- the `Now Reading` tab
 
-- 10:00 – 10:40
-- 22:00 – 22:25
+The rules are the same no matter which screen starts the session.
 
-Each session helps you understand your real reading rhythm.
+## Ending a session
 
----
+When you finish a session, the app asks for progress.
 
-## Start a session
+- the previous ended progress can be used as a starting point
+- only sessions of at least one minute are treated as normal saved sessions
+- after ending, the app can lead you to a session note flow
 
-Tap **Start Session** to begin logging.
+## Very short sessions
 
-Only one session can be active at a time.
+If you end a session before one minute has passed, the app may treat it as too short and show a message instead of saving it as a normal reading record.
 
----
+## Ending a session vs completing a book
 
-## End a session
+Entering `100%` progress does not behave like a normal session end. It leads into the completion flow instead.
 
-Tap **End Session** to save it.
+- a completion event is recorded
+- the app can suggest writing a book note
 
-You can optionally write a short session note before closing.
+If the progress is below `100%`, only the session ends and the app can suggest a session note instead.
 
----
+## Difference from the Now Reading page
 
-## Why sessions?
+This page explains the session rules themselves: how a session starts, ends, and turns into completion.
 
-Finishing a book is not the whole story.
-
-Sessions show:
-
-- when you read
-- how often you read
-- how long you read
-
-This is how reading becomes a habit you can see.
+- use this page when you want the behavior of the session feature
+- use `Now Reading` when you want the screen-level quick actions for current books

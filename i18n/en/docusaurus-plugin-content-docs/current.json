@@ -2,5 +2,9 @@
   "version.label": {
     "message": "Next",
     "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.사용자 매뉴얼": {
+    "message": "User Manual",
+    "description": "The label for category '사용자 매뉴얼' in sidebar 'tutorialSidebar'"
   }
 }

@@ -5,30 +5,37 @@ title: Backup & Restore
 
 # Backup & Restore
 
-Readium stores data on your device by default.
+Because Readium stores its data locally on the device, backups are recommended before reinstalling the app or moving to another device.
 
-If you switch devices or reinstall, backups are recommended.
+## What you can do in Settings
 
----
+- share the database file
+- save a backup to Downloads on Android
+- restore from a `.readium` file
+- change language
+- change theme
 
-## Backup (Export)
+## Exporting a backup
 
-1. Open **Settings**
-2. Select **Export**
-3. A `.readium` file is created
-4. Save it to external storage
+1. Open `Settings`.
+2. Choose a backup or export action.
+3. Share or save the generated file.
+4. Keep it somewhere safe outside the device if possible.
 
----
+On Android, the app can also show a separate action to save the backup directly to the Downloads folder.
 
-## Restore (Import)
+## Restoring data
 
-1. Settings → **Import**
-2. Select your backup file
-3. Restore your data
+1. Open the restore action in `Settings`.
+2. Choose a `.readium` file.
+3. Confirm the warning dialog.
+4. After restore finishes, follow the restart prompt.
 
----
+Because restore replaces the current local data flow, making one more fresh backup before restoring is the safer choice.
 
-## Notes
+## Important notes
 
-- Import may overwrite existing data.
-- Keep recent backups regularly.
+- The restore file must use the `.readium` extension.
+- The app needs to restart after restore.
+- Existing data may be overwritten.
+- Regular backups are recommended for long-term use.

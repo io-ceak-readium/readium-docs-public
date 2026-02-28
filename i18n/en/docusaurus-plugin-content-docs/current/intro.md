@@ -5,67 +5,58 @@ title: Readium User Manual
 
 # Readium
 
-A reading log app that helps you **save your reading as time**.
+Readium is not just a place to keep a list of books. It is a reading log app built to save your actual reading time as sessions and let you revisit that history later.
 
-Readium is not just a “book list.”  
-It’s designed to capture your reading as **sessions**, and bring them back as a **timeline** you can revisit.
+This manual is based on the current app source code and implemented behavior, not on older internal design documents.
 
-![Library Tab](/img/screenshots/intro_library.jpg)
+![Library](/img/001-library.jpg)
 
----
+![Now Reading](/img/002-nowReading.jpg)
 
-## What Readium is good at
+![Timeline](/img/005-timeline.jpg)
 
-### ⏱ Session-based logging
+## Core ideas
 
-Start reading, stop reading — and your time is saved.
+### Library
 
-Instead of focusing only on “finished or not,”  
-Readium helps you keep the **flow** of your reading.
+Your Library stores the books you add. Each book can keep ownership status, rating, and catalog metadata, and the Library is the main entry point to each book detail page.
 
-![Book Detail - session button](/img/screenshots/intro_book_detail.jpg)
+### Now Reading
 
----
+If you currently have books in progress, a separate tab lets you quickly start or end a session and add a session note.
 
-### 🗂 Timeline-first organization
+### Timeline
 
-- session start
-- session end
-- completion
-- notes
+Actions such as session start, session end, completion, abandonment, and note creation are collected in chronological order.
 
-Everything is organized in chronological order, so you can see your reading at a glance.
+### Notes
 
-![Timeline](/img/screenshots/intro_timeline.jpg)
+Readium separates two kinds of notes.
 
----
+- `Book notes` for the book as a whole
+- `Session notes` tied to a specific reading session
 
-### 📝 Simple notes
+### Local storage
 
-- book notes
-- session notes
+Reading logs and notes are stored on the device by default. The app uses Firebase anonymous authentication and ad SDKs for supporting features, but the reading data itself is not uploaded to a Readium server.
 
-Write only what you need.  
-Readium avoids unnecessary complexity.
+## Main app structure
 
-![note](/img/screenshots/intro_note.jpg)
+The bottom navigation has four tabs.
 
----
+- `Library`: book list, search, sort, and filters
+- `Now Reading`: quick controls for books currently in progress
+- `Timeline`: activity history and search
+- `Stats`: total reading time and last 7 days summary
 
-### 💾 Local-first data
+When the app launches, it opens `Now Reading` if there is at least one visible book currently being read. Otherwise it starts on `Library`.
 
-Your reading sessions and notes are stored **on your device** by default.
+## Recommended flow
 
-Readium uses Firebase anonymous authentication and Google AdMob,  
-but your reading data is not uploaded to a Readium server.
+1. Add a book to your Library.
+2. Start a session from the book detail page or `Now Reading`.
+3. End the session and enter progress.
+4. Add a book note or session note if needed.
+5. Review your history in Timeline and Stats.
 
----
-
-## Typical flow
-
-1. Add a book.
-2. Start a reading session.
-3. End the session.
-4. Review your flow in the timeline.
-
-Continue with the next pages for details.
+The next pages explain each part using the current UI behavior.

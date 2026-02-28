@@ -5,26 +5,51 @@ title: Getting Started
 
 # Getting Started
 
-## 1. Add a book
+Readium does not require account creation or complicated setup. The fastest way to get familiar with it is to follow the flow below.
 
-Go to **Library** and add a book.
+## 1. Add a book from Library
 
-A title is often enough.  
-Readium doesn’t require complicated setup.
+Open `Library` from the bottom navigation and tap the `+` button in the top right.
 
----
+The search screen supports:
 
-## 2. Start reading
+- external catalog search by title or author
+- direct ISBN input
+- barcode scanning for ISBN search
 
-Open the **Book Detail** page and tap **Start Session**.
+When you choose a result, the book is added to your Library. Right after that, the app can ask you to choose the book's ownership status.
 
-From that moment, time tracking begins.
+## 2. Review the book detail page
 
----
+Tap a book in Library to open its detail page. From there you can:
 
-## 3. End the session
+- change book status
+- save or clear a rating
+- start and end reading
+- mark the book as completed or abandoned
+- review book notes and session notes
 
-Tap **End Session** to save your reading time.
+## 3. Start reading
 
-Optionally, leave a short session note.  
-Your activity is automatically added to the timeline.
+You can start a session from the book detail page or from the `Now Reading` tab.
+
+Once the session starts, reading time begins to accumulate and the book appears in `Now Reading`.
+
+## 4. End reading
+
+When you end a session, you enter progress.
+
+- Entering `100%` marks the book as completed.
+- Entering less than `100%` ends only the session and can lead to a session note flow.
+- Very short sessions under one minute may not be saved as normal records.
+
+## 5. Review your history
+
+After reading, the two most useful places are:
+
+- `Timeline` to see what happened and when
+- `Stats` to see total time and the last 7 days of reading
+
+## 6. Back up your data
+
+Because Readium stores data locally, it is a good idea to save a `.readium` backup from `Settings` if the records matter to you.

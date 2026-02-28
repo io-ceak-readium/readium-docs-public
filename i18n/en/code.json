@@ -329,8 +329,11 @@
   "homepage.meta.description": {
     "message": "A session-based reading log app that saves your reading as time."
   },
+  "homepage.hero.title": {
+    "message": "Save reading as sessions, not just finished books."
+  },
   "homepage.hero.lead": {
-    "message": "Readium is a session-based reading log app that helps you save your reading as time. Track start/end sessions, completion, and notes—then revisit everything in a timeline."
+    "message": "Readium is a session-based reading log app that helps you manage session starts and ends, progress, notes, and timeline history as one connected flow."
   },
   "homepage.cta.manual": {
     "message": "User Manual"
@@ -338,40 +341,64 @@
   "homepage.cta.privacy": {
     "message": "Privacy"
   },
+  "homepage.metric.focus": {
+    "message": "Main focus"
+  },
+  "homepage.metric.focus.value": {
+    "message": "Reading sessions"
+  },
+  "homepage.metric.storage": {
+    "message": "Storage"
+  },
+  "homepage.metric.storage.value": {
+    "message": "Local-first"
+  },
+  "homepage.metric.views": {
+    "message": "Core views"
+  },
+  "homepage.metric.views.value": {
+    "message": "Library, Now Reading, Timeline"
+  },
   "homepage.feature.session.title": {
-    "message": "⏱ Sessions"
+    "message": "Session-first reading log"
   },
   "homepage.feature.session.desc": {
-    "message": "Log start and end times. Reading is saved as time."
+    "message": "Track when reading starts and ends so the record keeps your real reading rhythm."
+  },
+  "homepage.feature.now.title": {
+    "message": "Fast current-reading controls"
+  },
+  "homepage.feature.now.desc": {
+    "message": "Start, stop, and add session notes from Now Reading without digging through the Library."
   },
   "homepage.feature.timeline.title": {
-    "message": "🗂 Timeline"
+    "message": "Timeline you can revisit"
   },
   "homepage.feature.timeline.desc": {
-    "message": "Sessions, completion, and notes are organized in chronological order."
-  },
-  "homepage.feature.notes.title": {
-    "message": "📝 Notes"
-  },
-  "homepage.feature.notes.desc": {
-    "message": "Keep book notes and session notes separate—write only what you need."
+    "message": "Session activity, completion, and notes are collected in one chronological history."
   },
   "homepage.feature.local.title": {
-    "message": "💾 Local-first"
+    "message": "Local data with backup"
   },
   "homepage.feature.local.desc": {
-    "message": "Your reading data is stored on-device. Move it with backup/restore."
+    "message": "Reading records stay on-device by default and can be moved with backup and restore."
   },
   "homepage.screenshots.title": {
-    "message": "Screenshots"
+    "message": "Core Screens"
   },
   "homepage.screenshots.subtitle": {
-    "message": "Designed to keep you focused on logging—without complicated setup."
+    "message": "Each screen is built around one job: managing books, continuing current reading, reviewing notes, and checking the timeline."
   },
   "homepage.shot.library": {
     "message": "Library"
   },
   "homepage.shot.nowReading": {
+    "message": "Now Reading"
+  },
+  "homepage.shot.library2": {
+    "message": "Library"
+  },
+  "homepage.shot.nowReading2": {
     "message": "Now Reading"
   },
   "homepage.shot.bookDetail": {
@@ -383,11 +410,14 @@
   "homepage.shot.timeline": {
     "message": "Timeline"
   },
+  "homepage.shot.timeline2": {
+    "message": "Timeline"
+  },
   "homepage.privacy.title": {
     "message": "Data & Privacy"
   },
   "homepage.privacy.lead": {
-    "message": "By default, Readium stores your reading logs, sessions, notes, and timeline data locally on your device."
+    "message": "By default, Readium keeps reading logs, notes, and timeline history on your device instead of uploading them to a Readium server."
   },
   "homepage.privacy.bullet1": {
     "message": "Your reading data is not uploaded to a Readium server."
@@ -400,5 +430,8 @@
   },
   "homepage.manual.cta": {
     "message": "Read the Manual"
+  },
+  "homepage.store.comingSoon": {
+    "message": "Coming Soon"
   }
 }
