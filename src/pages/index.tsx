@@ -20,10 +20,10 @@ export default function Home() {
   const appStoreBadgeUrl = useBaseUrl('img/store/app-store-badge.svg');
 
   const ANDROID_LIVE = false;
-  const IOS_LIVE = false;
+  const IOS_LIVE = true;
 
   const ANDROID_URL = 'https://play.google.com/store/apps/details?id=your.package';
-  const IOS_URL = 'https://apps.apple.com/app/idXXXXXXXXXX';
+  const IOS_URL = 'https://apps.apple.com/us/app/readium/id6759912447';
 
   return (
     <Layout
