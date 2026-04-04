@@ -19,11 +19,11 @@ export default function Home() {
   const playBadgeUrl = useBaseUrl('img/store/google-play-badge.png');
   const appStoreBadgeUrl = useBaseUrl('img/store/app-store-badge.svg');
 
-  const ANDROID_LIVE = true;
-  const IOS_LIVE = false;
+    const ANDROID_LIVE = true;
+  const IOS_LIVE = true;
 
   const ANDROID_URL = 'https://play.google.com/store/apps/details?id=io.ceak.readium.app';
-  const IOS_URL = 'https://apps.apple.com/app/idXXXXXXXXXX';
+  const IOS_URL = 'https://apps.apple.com/us/app/readium/id6759912447';
 
   return (
     <Layout
