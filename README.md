@@ -4,7 +4,7 @@ Official documentation site for **Readium** —
 a session-based reading log app that saves your reading as time.
 
 🌐 Live Site: https://io-ceak-readium.github.io/readium-docs-public
-📱 App Status: Android – Coming Soon / iOS – Live ([App Store](https://apps.apple.com/us/app/readium/id6759912447))  
+📱 App Status: Android – Live ([Google Play](https://play.google.com/store/apps/details?id=io.ceak.readium.app)) / iOS – Live ([App Store](https://apps.apple.com/us/app/readium/id6759912447))  
 
 ---
 
